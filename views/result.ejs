@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Successful</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Registration Successful</h2>
+
+        <div class="result-box">
+            <p><strong>ID:</strong> <%= user.id %></p>
+            <p><strong>Username:</strong> <%= user.username %></p>
+            <p><strong>Email:</strong> <%= user.email %></p>
+            <p><strong>Age:</strong> <%= user.age %></p>
+        </div>
+
+        <p class="link"><a href="/">Register Another User</a></p>
+        <p class="link"><a href="/users">View All Registered Users</a></p>
+    </div>
+
+</body>
+</html>

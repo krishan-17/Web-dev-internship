@@ -1,0 +1,194 @@
+/* ===== Google Font ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, #6a8dff 0%, #a06bff 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 35px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 420px;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2d2d3a;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 0.5px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #444;
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #333;
+    background-color: #f9f9fb;
+    transition: all 0.2s ease;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+input:focus {
+    outline: none;
+    border-color: #6a8dff;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(106, 141, 255, 0.15);
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+    font-weight: 500;
+    min-height: 14px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #6a8dff 0%, #a06bff 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(106, 141, 255, 0.35);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.link {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+.link a {
+    color: #6a8dff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.link a:hover {
+    color: #a06bff;
+    text-decoration: underline;
+}
+
+.result-box {
+    background-color: #f5f7ff;
+    border: 1px solid #e0e6ff;
+    border-radius: 8px;
+    padding: 18px;
+    margin-bottom: 10px;
+}
+
+.result-box p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.result-box p:last-child {
+    margin-bottom: 0;
+}
+
+.result-box strong {
+    color: #2d2d3a;
+    font-weight: 600;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+table th, table td {
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 13px;
+}
+
+table th {
+    background: linear-gradient(135deg, #6a8dff 0%, #a06bff 100%);
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+table td {
+    background-color: #fafafe;
+    color: #444;
+    border-bottom: 1px solid #f0f0f5;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+table tr:hover td {
+    background-color: #f0f3ff;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Users</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Registered Users</h2>
+
+        <% if (users.length === 0) { %>
+            <p>No users registered yet.</p>
+        <% } else { %>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                </tr>
+                <% users.forEach(function(user) { %>
+                    <tr>
+                        <td><%= user.id %></td>
+                        <td><%= user.username %></td>
+                        <td><%= user.email %></td>
+                        <td><%= user.age %></td>
+                    </tr>
+                <% }); %>
+            </table>
+        <% } %>
+
+        <p class="link"><a href="/">Back to Form</a></p>
+    </div>
+
+</body>
+</html>

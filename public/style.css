@@ -1,0 +1,76 @@
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav a {
+    transition: color 0.2s;
+}
+
+.btn {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(99, 102, 241, 0.3);
+}
+
+input:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+tr {
+    transition: background 0.15s;
+}
+
+/* ----  routing, validation & progress additions ---- */
+
+/* Hide inactive sections when hash-routing is active */
+.app-section.hidden {
+    display: none;
+}
+
+/* Active nav link (updated by script.js based on the current route) */
+.nav-link.active-link {
+    color: #4f46e5;
+    font-weight: 600;
+}
+
+/* Live validation state on inputs */
+.field-input {
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.field-input.field-valid {
+    border-color: #22c55e;
+    background-color: #f0fdf4;
+}
+
+.field-input.field-invalid {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+}
+
+.live-error {
+    transition: opacity 0.15s;
+}
+
+.toggle-password {
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+}

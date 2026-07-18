@@ -1,0 +1,106 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.btn {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(99, 102, 241, 0.3);
+}
+
+.card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.field-input {
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.field-input:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.field-input.field-invalid {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+}
+
+.live-error {
+    transition: opacity 0.15s;
+}
+
+         /*  filter tabs */
+.filter-btn {
+    color: #6b7280;
+    border-color: #e5e7eb;
+    background: #fff;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.filter-btn.active-filter {
+    background: #4f46e5;
+    color: #fff;
+    border-color: #4f46e5;
+}
+
+        /*  priority badges  */
+.priority-badge.priority-low {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.priority-badge.priority-medium {
+    background: #fffbeb;
+    color: #d97706;
+}
+
+.priority-badge.priority-high {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+
+/*  toast banner  */
+#banner.banner-success {
+    background: #f0fdf4;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+}
+
+#banner.banner-error {
+    background: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+/*  enter/exit animation for task cards  */
+.task-card {
+    animation: fadeIn 0.25s ease;
+}
+
+.task-card.removing {
+    opacity: 0;
+    transform: translateX(12px);
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

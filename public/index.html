@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager — API Integration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="bg-gray-50 text-gray-700 min-h-screen">
+
+    <!-- HEADER -->
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <span class="text-lg font-bold text-indigo-600">Task Manager</span>
+                <span class="text-xs text-gray-400 block">REST API + fetch() demo</span>
+            </div>
+            <div class="flex gap-4 text-sm text-gray-500" id="statsBar">
+                <span><strong id="statTotal" class="text-gray-800">0</strong> total</span>
+                <span><strong id="statPending" class="text-amber-500">0</strong> pending</span>
+                <span><strong id="statCompleted" class="text-green-600">0</strong> done</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-10">
+
+        <!-- Toast banner -->
+        <div id="banner" class="hidden mb-6 rounded-lg px-4 py-3 text-sm font-medium"></div>
+
+        <!-- ADD TASK CARD -->
+        <section class="card bg-white border rounded-xl p-6 mb-8">
+            <h2 class="text-base font-semibold text-gray-800 mb-4">Add a new task</h2>
+            <form id="taskForm" class="grid gap-4 sm:grid-cols-2">
+                <div class="sm:col-span-2">
+                    <label class="block text-xs font-medium text-gray-500 mb-1">Title</label>
+                    <input type="text" id="titleInput" name="title" placeholder="e.g. Write project report"
+                        class="field-input w-full border rounded-lg px-3 py-2 text-sm" />
+                    <p class="live-error text-xs text-red-500 mt-1 hidden" data-error-for="title"></p>
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-xs font-medium text-gray-500 mb-1">Description <span class="text-gray-400">(optional)</span></label>
+                    <input type="text" id="descriptionInput" name="description" placeholder="Add more detail..."
+                        class="field-input w-full border rounded-lg px-3 py-2 text-sm" />
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-gray-500 mb-1">Priority</label>
+                    <select id="priorityInput" name="priority" class="field-input w-full border rounded-lg px-3 py-2 text-sm bg-white">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <div class="flex items-end">
+                    <button type="submit" id="submitBtn"
+                        class="btn w-full bg-indigo-600 text-white text-sm font-medium rounded-lg px-4 py-2 hover:bg-indigo-700">
+                        Add Task
+                    </button>
+                </div>
+            </form>
+        </section>
+
+                  <!--  FILTER TABS -->
+        <div class="flex gap-2 mb-5" id="filterBar">
+            <button data-filter="all" class="filter-btn active-filter text-xs font-medium px-3 py-1.5 rounded-full border">All</button>
+            <button data-filter="pending" class="filter-btn text-xs font-medium px-3 py-1.5 rounded-full border">Pending</button>
+            <button data-filter="completed" class="filter-btn text-xs font-medium px-3 py-1.5 rounded-full border">Completed</button>
+        </div>
+
+                <!-- TASK LIST -->
+        <section id="taskList" class="grid gap-3">
+         
+        </section>
+
+        <p id="emptyState" class="hidden text-center text-sm text-gray-400 py-14">No tasks here yet.</p>
+        <p id="loadingState" class="text-center text-sm text-gray-400 py-14">Loading tasks…</p>
+
+    </main>
+
+    <!--  card template for a single task -->
+    <template id="taskTemplate">
+        <article class="task-card card bg-white border rounded-xl p-4 flex items-start gap-3" data-id="">
+            <input type="checkbox" class="toggle-checkbox mt-1.5 h-4 w-4 accent-indigo-600" />
+
+            <div class="flex-1 min-w-0">
+                <!-- view mode -->
+                <div class="view-mode">
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <h3 class="task-title font-semibold text-sm text-gray-800"></h3>
+                        <span class="priority-badge text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full"></span>
+                    </div>
+                    <p class="task-description text-xs text-gray-400 mt-1"></p>
+                </div>
+
+                <!-- edit mode -->
+                <div class="edit-mode hidden grid gap-2">
+                    <input type="text" class="edit-title field-input w-full border rounded-lg px-3 py-1.5 text-sm" />
+                    <input type="text" class="edit-description field-input w-full border rounded-lg px-3 py-1.5 text-sm" />
+                    <select class="edit-priority field-input w-full border rounded-lg px-3 py-1.5 text-sm bg-white">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-1.5 items-end shrink-0">
+                <button class="edit-btn text-xs text-gray-400 hover:text-indigo-600">Edit</button>
+                <button class="save-btn hidden text-xs text-indigo-600 font-medium hover:text-indigo-700">Save</button>
+                <button class="cancel-btn hidden text-xs text-gray-400 hover:text-gray-600">Cancel</button>
+                <button class="delete-btn text-xs text-gray-400 hover:text-red-600">Delete</button>
+            </div>
+        </article>
+    </template>
+
+    <script src="/script.js"></script>
+</body>
+</html>

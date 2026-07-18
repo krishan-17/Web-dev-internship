@@ -1,8 +1,8 @@
 # Task Manager — API Integration & Front-End Interaction
 
-A simple full-stack task manager built with **Node.js**, **Express**, and vanilla **HTML/CSS/JavaScript**. It demonstrates a complete RESTful API (Create, Read, Update, Delete) on the backend, connected to a dynamic front-end that talks to it entirely through `fetch()` — no page reloads.
+A simple full-stack task manager built with **Node.js**, **Express**, and **HTML/CSS/JavaScript**. It demonstrates a complete RESTful API (Create, Read, Update, Delete) on the backend, connected to a dynamic front-end that talks to it entirely through `fetch()` — no page reloads.
 
-> **Task 5** of the Web Dev Internship. Builds on the Express/Tailwind setup used in Task 4, but focuses on wiring a front-end to a full CRUD REST API rather than form validation.
+
 
 ## Project Structure
 
@@ -62,7 +62,7 @@ A simple full-stack task manager built with **Node.js**, **Express**, and vanill
 | Node.js      | JavaScript runtime                        |
 | Express.js   | Web framework, REST routing, JSON API     |
 | Tailwind CSS | Utility-first styling (via CDN)           |
-| Vanilla JS   | `fetch()` calls + dynamic DOM rendering   |
+
 
 ## Getting Started
 
